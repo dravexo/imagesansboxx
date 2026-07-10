@@ -47,12 +47,42 @@ export default function ImageCompressor() {
   const [isConvertingAny, setIsConvertingAny] = useState(false);
   const [selectedFileIds, setSelectedFileIds] = useState<string[]>([]);
 
+  const helpCloseBtnRef = useRef<HTMLButtonElement | null>(null);
+  const helpLastFocusRef = useRef<HTMLElement | null>(null);
+
   // Toggles the selection of a specific file
   const handleToggleSelect = (id: string) => {
+
     setSelectedFileIds((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
+
+  // Keyboard support for the "How it works" modal
+  useEffect(() => {
+    if (!isHelpOpen) return;
+
+    helpLastFocusRef.current = document.activeElement as HTMLElement | null;
+
+    const t = window.setTimeout(() => {
+      helpCloseBtnRef.current?.focus();
+    }, 0);
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        setIsHelpOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      window.clearTimeout(t);
+      window.removeEventListener('keydown', onKeyDown);
+      helpLastFocusRef.current?.focus?.();
+    };
+  }, [isHelpOpen]);
 
   // Global Keyboard Navigation & Workflow Accelerator
   useEffect(() => {
@@ -564,7 +594,10 @@ export default function ImageCompressor() {
 
       {/* Premium Informational Modal Dialog ("How it works") */}
       {isHelpOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          aria-hidden="false"
+        >
           {/* Backdrop glass */}
           <div
             className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
@@ -572,19 +605,30 @@ export default function ImageCompressor() {
           />
 
           {/* Modal Container */}
-          <div className="bg-white border border-slate-200 rounded-2xl max-w-lg w-full p-6 relative z-10 shadow-xl space-y-6 animate-in fade-in zoom-in-95 duration-200">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="how-it-works-title"
+            className="bg-white border border-slate-200 rounded-2xl max-w-lg w-full p-6 relative z-10 shadow-xl space-y-6 animate-in fade-in zoom-in-95 duration-200"
+          >
             <button
+              ref={helpCloseBtnRef}
               onClick={() => setIsHelpOpen(false)}
               className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
+
             <div className="space-y-2">
-              <h3 className="text-lg font-display font-bold text-slate-900 flex items-center gap-2">
+              <h3
+                id="how-it-works-title"
+                className="text-lg font-display font-bold text-slate-900 flex items-center gap-2"
+              >
                 <Sparkles className="w-5 h-5 text-blue-500" />
                 <span>How imageboxx Works</span>
               </h3>
+
               <p className="text-sm text-slate-500 font-medium">
                 A professional, client-side toolkit built to make image conversion instant, safe, and robust.
               </p>

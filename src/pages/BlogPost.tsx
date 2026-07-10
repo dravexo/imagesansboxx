@@ -79,6 +79,11 @@ export default function BlogPost() {
             src={post.imageUrl} 
             alt={post.title} 
             referrerPolicy="no-referrer"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            width="1600"
+            height="729"
             className="w-full h-full object-cover"
           />
         </div>
