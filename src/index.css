@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Redefining styles for Professional Polish (Light, Clean, Slate/Blue Accents) */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.04), 0 1px 3px -1px rgba(15, 23, 42, 0.02);
+}
+
+.glass-panel-light {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px -1px rgba(15, 23, 42, 0.03);
+}
+
+.glow-purple {
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.12);
+}
+
+.glow-blue {
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.1);
+}
+
