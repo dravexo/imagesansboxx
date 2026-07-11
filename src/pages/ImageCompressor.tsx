@@ -1,24 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  ShieldCheck,
-  Zap,
-  Cpu,
-  Lock,
-  Download,
-  Trash2,
-  Sliders,
-  Archive,
-  Play,
-  Heart,
-  HelpCircle,
-  X,
-  Sparkles,
-  Info,
-  Check,
-  Grid,
-  FileDown
-} from 'lucide-react';
-import JSZip from 'jszip';
+import { X } from 'lucide-react';
+
+
 import { Link } from 'react-router-dom';
 
 // Import Child Components
@@ -346,7 +329,9 @@ export default function ImageCompressor() {
     const doneItems = files.filter((f) => f.status === 'done' && f.convertedBlob);
     if (doneItems.length === 0) return;
 
+    const JSZip = (await import('jszip')).default;
     const zip = new JSZip();
+
 
     doneItems.forEach((item) => {
       const ext = item.targetFormat === 'jpeg' ? 'jpg' : item.targetFormat;
