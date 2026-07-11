@@ -150,6 +150,8 @@ export default function ImageCompressor() {
   }, [files]);
 
   const { runConversion } = useImageConversion();
+  const [pageError, setPageError] = useState<string | null>(null);
+
 
 
   // Convert a single file from the list
@@ -159,7 +161,9 @@ export default function ImageCompressor() {
     );
 
     try {
+      setPageError(null);
       // Find the file item using current ref
+
       const fileItem = filesRef.current.find((f) => f.id === id);
       if (!fileItem) return;
 
@@ -185,7 +189,10 @@ export default function ImageCompressor() {
         )
       );
     } catch (err: any) {
+      const msg = err?.message || 'Failed to convert';
+      setPageError(msg);
       setFiles((prev) =>
+
         prev.map((f) =>
           f.id === id
             ? {
@@ -202,6 +209,8 @@ export default function ImageCompressor() {
 
   // File Upload Drop Handler
   const handleFilesAdded = async (fileList: FileList) => {
+    setPageError(null);
+
     const newFiles: ConverterFile[] = [];
 
     for (let i = 0; i < fileList.length; i++) {
@@ -270,6 +279,7 @@ export default function ImageCompressor() {
     setFiles((prev) => prev.filter((f) => f.id !== id));
     setSelectedFileIds((prev) => prev.filter((item) => item !== id));
   };
+
 
   // Clear queue and free resource blobs
   const handleClearAll = () => {
@@ -420,6 +430,18 @@ export default function ImageCompressor() {
       <Header onShowHelp={() => setIsHelpOpen(true)} />
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 relative z-10 space-y-8">
+        {pageError && (
+          <div className="w-full bg-rose-50 border border-rose-200 text-rose-700 rounded-2xl p-4 text-sm font-medium">
+            <div className="flex items-start gap-3">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-rose-100 text-rose-600">!</span>
+              <div>
+                <div className="font-bold">Something went wrong</div>
+                <div className="text-rose-800/90">{pageError}</div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Intro Privacy banner */}
         <PrivacyBanner />
 
