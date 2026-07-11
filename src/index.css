@@ -3,9 +3,14 @@
 
 :root {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", sans-serif;
+  --font-display: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
+
+html {
+  font-display: swap;
+}
+
 
 
 /* Redefining styles for Professional Polish (Light, Clean, Slate/Blue Accents) */

@@ -36,6 +36,7 @@ export default function App() {
             <Route path="/" element={<ImageCompressor />} />
 
             <Route path="/pdf-compressor" element={<PdfCompressor />} />
+
             <Route path="/how-to-use" element={<HowToUse />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/blog" element={<Blog />} />
