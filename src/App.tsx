@@ -5,7 +5,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import GoogleAnalyticsHead from './components/GoogleAnalyticsHead';
 
 
-const ImageCompressor = lazy(() => import('./pages/ImageCompressor'));
+const ImageCompressor = lazy(() => import('./pages/ImageCompressor.tsx'));
 const PdfCompressor = lazy(() => import('./pages/PdfCompressor'));
 const HowToUse = lazy(() => import('./pages/HowToUse'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
