@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import GoogleAnalyticsHead from './components/GoogleAnalyticsHead';
+
 
 const ImageCompressor = lazy(() => import('./pages/ImageCompressor'));
 const PdfCompressor = lazy(() => import('./pages/PdfCompressor'));
@@ -28,9 +30,11 @@ export default function App() {
     <ErrorBoundary>
       <BrowserRouter>
         <ScrollToTop />
+        <GoogleAnalyticsHead />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<ImageCompressor />} />
+
             <Route path="/pdf-compressor" element={<PdfCompressor />} />
             <Route path="/how-to-use" element={<HowToUse />} />
             <Route path="/contact-us" element={<ContactUs />} />

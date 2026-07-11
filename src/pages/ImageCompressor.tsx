@@ -531,6 +531,7 @@ export default function ImageCompressor() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="how-it-works-title"
+            tabIndex={-1}
             className="bg-white border border-slate-200 rounded-2xl max-w-lg w-full p-6 relative z-10 shadow-xl space-y-6 animate-in fade-in zoom-in-95 duration-200"
           >
             <button

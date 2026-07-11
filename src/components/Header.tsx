@@ -46,6 +46,7 @@ export default function Header({ onShowHelp }: HeaderProps) {
         {/* Help/Info trigger */}
         <button
           onClick={onShowHelp}
+          aria-label="How it works"
           className="flex items-center gap-1.5 text-xs text-slate-600 hover:text-slate-900 transition-all px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 cursor-pointer font-medium"
         >
           <HelpCircle className="w-4 h-4 text-slate-500" />

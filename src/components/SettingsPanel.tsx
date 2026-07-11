@@ -74,11 +74,12 @@ export default function SettingsPanel({
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Target Format */}
         <div className="space-y-2">
-          <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider">
+          <label htmlFor="global-target-format" className="block text-xs font-bold text-slate-400 uppercase tracking-wider">
             Default Target Format
           </label>
           <div className="relative">
             <select
+              id="global-target-format"
               value={settings.format}
               onChange={handleFormatChange}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer appearance-none"
@@ -111,7 +112,7 @@ export default function SettingsPanel({
         {/* Target File Size */}
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider">
+            <label htmlFor="global-target-size" className="block text-xs font-bold text-slate-400 uppercase tracking-wider">
               Target File Size
             </label>
             <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-100">
@@ -121,6 +122,7 @@ export default function SettingsPanel({
 
           <div className="flex gap-2">
             <input
+              id="global-target-size"
               type="number"
               min="1"
               max="9999"
@@ -130,6 +132,7 @@ export default function SettingsPanel({
               placeholder="e.g. 200"
             />
             <select
+              id="global-target-size-unit"
               value={settings.targetSizeUnit}
               onChange={handleTargetSizeUnitChange}
               className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm text-slate-800 font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all cursor-pointer"
