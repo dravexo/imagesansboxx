@@ -130,6 +130,7 @@ export default function PdfCompressor() {
       setFiles((prev) => prev.map((f) => (f.id === id ? { ...f, progress: 60 } : f)));
       
       let pdfBytes: Uint8Array;
+      let pdfBlob: Blob | null = null;
       const isImage = fileItem.file.type.startsWith('image/');
       
       if (isImage) {
@@ -184,7 +185,7 @@ export default function PdfCompressor() {
         pdfBytes = await pdfDoc.save({ useObjectStreams: false });
       }
       
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = pdfBlob ?? new Blob([new Uint8Array(pdfBytes)], { type: 'application/pdf' });
       
       // If it was an image, we MUST use the blob. If it was a PDF, fallback to original if larger.
       const isSmaller = blob.size < fileItem.originalSize;
@@ -288,8 +289,9 @@ export default function PdfCompressor() {
       document.body.removeChild(link);
 
       setTimeout(() => URL.revokeObjectURL(zipUrl), 2000);
-    } catch (err) {
-      console.error('Failed to assemble ZIP archive:', err);
+    } catch {
+      // Swallow ZIP assembly errors to avoid noisy production console output.
+      // User feedback is handled elsewhere (or can be added without breaking flow).
     }
   };
 

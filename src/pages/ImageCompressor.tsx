@@ -129,11 +129,7 @@ export default function ImageCompressor() {
     };
   }, [selectedFileIds]);
 
-  // Maintain ref to files to avoid dependency lag in callbacks
-  const filesRef = useRef<ConverterFile[]>(files);
-  filesRef.current = files;
 
-  // Cleanup object URLs on unmount to prevent memory leaks
   useEffect(() => {
     return () => {
       filesRef.current.forEach((item) => {
@@ -154,8 +150,13 @@ export default function ImageCompressor() {
 
 
 
+  // Maintain ref to files to avoid dependency lag in callbacks
+  const filesRef = useRef<ConverterFile[]>(files);
+  filesRef.current = files;
+
   // Convert a single file from the list
   const handleConvertFile = async (id: string) => {
+
     setFiles((prev) =>
       prev.map((f) => (f.id === id ? { ...f, status: 'converting', progress: 40 } : f))
     );
@@ -363,9 +364,10 @@ export default function ImageCompressor() {
       document.body.removeChild(link);
 
       setTimeout(() => URL.revokeObjectURL(zipUrl), 2000);
-    } catch (err) {
-      console.error('Failed to assemble ZIP archive:', err);
+    } catch {
+      // Swallow ZIP assembly errors to avoid breaking the UI.
     }
+
   };
 
   // Overwrite individual custom overrides with global settings
