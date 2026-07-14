@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 
 
@@ -11,11 +11,22 @@ import SettingsPanel from '../components/SettingsPanel';
 import Dropzone from '../components/Dropzone';
 import FileList, { formatBytes } from '../components/FileList';
 import BatchActions from '../components/BatchActions';
-import Footer from '../components/Footer';
-
+const Footer = lazy(() => import("../components/Footer"));
 // Import Types
 import { ConverterFile, GlobalSettings, ImageFormat } from '../types';
-import { KnowledgeBaseSections, HowItWorksModalContent } from './home/KnowledgeBaseSections';
+
+
+const KnowledgeBaseSections = lazy(() =>
+  import("./home/KnowledgeBaseSections").then(module => ({
+    default: module.KnowledgeBaseSections,
+  }))
+);
+
+const HowItWorksModalContent = lazy(() =>
+  import("./home/KnowledgeBaseSections").then(module => ({
+    default: module.HowItWorksModalContent,
+  }))
+);
 import { useImageConversion } from '../hooks/useImageConversion';
 
 
@@ -551,18 +562,25 @@ export default function ImageCompressor() {
               <X className="w-5 h-5" />
             </button>
 
-            <HowItWorksModalContent onClose={() => setIsHelpOpen(false)} />
-          </div>
+<Suspense fallback={null}>
+    <HowItWorksModalContent
+        onClose={() => setIsHelpOpen(false)}
+    />
+</Suspense>          </div>
         </div>
       )}
 
       {/* Professional Information & Knowledge Base */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 relative z-10">
-        <KnowledgeBaseSections />
+<Suspense fallback={null}>
+   <KnowledgeBaseSections />
+</Suspense>
       </section>
 
       {/* Page Footer */}
-      <Footer />
+<Suspense fallback={null}>
+   <Footer />
+</Suspense>
     </div>
   );
 }
