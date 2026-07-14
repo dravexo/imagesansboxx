@@ -11,16 +11,12 @@ import SettingsPanel from '../components/SettingsPanel';
 import Dropzone from '../components/Dropzone';
 import FileList, { formatBytes } from '../components/FileList';
 import BatchActions from '../components/BatchActions';
-const Footer = lazy(() => import("../components/Footer"));
+import Footer from '../components/Footer';
 // Import Types
 import { ConverterFile, GlobalSettings, ImageFormat } from '../types';
 
 
-const KnowledgeBaseSections = lazy(() =>
-  import("./home/KnowledgeBaseSections").then(module => ({
-    default: module.KnowledgeBaseSections,
-  }))
-);
+import { KnowledgeBaseSections } from './home/KnowledgeBaseSections';
 
 const HowItWorksModalContent = lazy(() =>
   import("./home/KnowledgeBaseSections").then(module => ({
@@ -572,15 +568,11 @@ export default function ImageCompressor() {
 
       {/* Professional Information & Knowledge Base */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 relative z-10">
-<Suspense fallback={null}>
-   <KnowledgeBaseSections />
-</Suspense>
+<KnowledgeBaseSections />
       </section>
 
-      {/* Page Footer */}
-<Suspense fallback={null}>
-   <Footer />
-</Suspense>
+{/* Page Footer */}
+<Footer />
     </div>
   );
 }
