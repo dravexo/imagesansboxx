@@ -1,5 +1,3 @@
-- [ ] Inspect GoogleAnalyticsHead.tsx for requestIdleCallback / cancelIdleCallback type declarations
-- [ ] Remove conflicting global declarations (or align them to the built-in lib types)
-- [ ] Update code to use a single, consistent Window typing for idle callbacks
-- [ ] Verify TypeScript build passes (tsc / vite build)
-
+- [ ] Edit `index.html` to remove redundant Google Fonts `<link rel="preload" as="style" ...>` (keep only `media="print" onload="this.media='all'"` pattern + noscript fallback)
+- [ ] Edit `src/App.tsx` to remove/narrow top-level `<Suspense fallback={LoadingFallback}>` so initial `/` isn’t gated by the global spinner
+- [ ] Run build + local preview, then re-check Pagespeed desktop + mobile for CLS/FCP/LCP/Speed Index improvements

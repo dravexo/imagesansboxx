@@ -33,27 +33,110 @@ export default function App() {
       <BrowserRouter>
         <ScrollToTop />
         <GoogleAnalyticsHead />
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<ImageCompressor />} />
 
-            <Route path="/pdf-compressor" element={<PdfCompressor />} />
+        <Routes>
+          <Route path="/" element={<ImageCompressor />} />
 
-            <Route path="/how-to-use" element={<HowToUse />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/government-form-guide" element={<GovernmentFormGuide />} />
-            <Route path="/job-application-guide" element={<JobApplicationGuide />} />
-            <Route path="/indian-govt-size-guide" element={<IndianGovtSizeGuide />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
+          {/* Lazy routes */}
+          <Route
+            path="/pdf-compressor"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <PdfCompressor />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/how-to-use"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <HowToUse />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact-us"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <ContactUs />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <Blog />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blog/:slug"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <BlogPost />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/government-form-guide"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <GovernmentFormGuide />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/job-application-guide"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <JobApplicationGuide />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/indian-govt-size-guide"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <IndianGovtSizeGuide />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/about-us"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <AboutUs />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/privacy-policy"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <PrivacyPolicy />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/terms-of-service"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <TermsOfService />
+              </Suspense>
+            }
+          />
 
-            {/* Catch-all 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+          {/* Catch-all 404 */}
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <NotFound />
+              </Suspense>
+            }
+          />
+        </Routes>
       </BrowserRouter>
     </ErrorBoundary>
   );
