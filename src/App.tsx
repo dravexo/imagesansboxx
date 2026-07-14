@@ -17,6 +17,8 @@ const IndianGovtSizeGuide = lazy(() => import('./pages/IndianGovtSizeGuide'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
 
 const LoadingFallback = () => (
   <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center text-slate-500 space-y-4">
@@ -47,9 +49,13 @@ export default function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+
+            {/* Catch-all 404 */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
     </ErrorBoundary>
   );
 }
+
