@@ -11,15 +11,12 @@ import SettingsPanel from '../components/SettingsPanel';
 import Dropzone from '../components/Dropzone';
 import FileList, { formatBytes } from '../components/FileList';
 import BatchActions from '../components/BatchActions';
-
+import Footer from '../components/Footer';
 // Import Types
 import { ConverterFile, GlobalSettings, ImageFormat } from '../types';
 
-const Footer = lazy(() => import('../components/Footer'));
-const KnowledgeBaseSectionsLazy = lazy(() =>
-  import('./home/KnowledgeBaseSections').then((m) => ({ default: m.KnowledgeBaseSections }))
-);
 
+import { KnowledgeBaseSections } from './home/KnowledgeBaseSections';
 
 const HowItWorksModalContent = lazy(() =>
   import("./home/KnowledgeBaseSections").then(module => ({
@@ -27,7 +24,6 @@ const HowItWorksModalContent = lazy(() =>
   }))
 );
 import { useImageConversion } from '../hooks/useImageConversion';
-
 
 
 export default function ImageCompressor() {
@@ -572,17 +568,12 @@ export default function ImageCompressor() {
 
       {/* Professional Information & Knowledge Base */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 relative z-10">
-        <Suspense fallback={null}>
-          <KnowledgeBaseSectionsLazy />
-        </Suspense>
+<KnowledgeBaseSections />
       </section>
 
-      {/* Page Footer */}
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+{/* Page Footer */}
+<Footer />
     </div>
   );
 }
-
 
