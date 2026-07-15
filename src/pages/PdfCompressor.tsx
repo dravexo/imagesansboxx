@@ -6,8 +6,6 @@ import { FileDown, Trash2, CheckCircle, AlertCircle, RefreshCw, Archive, Setting
 import JSZip from 'jszip';
 import { PdfFile, PdfSettings } from '../types';
 import { formatBytes } from '../components/FileList';
-import PdfGuidesContent from './home/GuidesPdfCompressor';
-
 
 export default function PdfCompressor() {
   const [files, setFiles] = useState<PdfFile[]>([]);
@@ -305,10 +303,9 @@ export default function PdfCompressor() {
   return (
     <PageLayout title="PDF Compressor">
       <div className="w-full max-w-6xl space-y-8 relative z-10">
+        
         {/* Dropzone */}
-
         <Dropzone 
-
           onFilesAdded={handleFilesAdded}
           accept="application/pdf, image/png, image/jpeg, image/jpg, image/webp"
           title="Drag & drop PDFs or Images, or click to browse"
@@ -317,14 +314,8 @@ export default function PdfCompressor() {
           iconType="file"
         />
 
-        {/* Guides */}
-        <div className="pt-2">
-          <PdfGuidesContent />
-        </div>
-
         {/* Dashboard */}
         {finishedFiles.length > 0 && (
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
              <div className="space-y-1">
               <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider block">Completed</span>
