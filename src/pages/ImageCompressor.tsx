@@ -595,17 +595,29 @@ export default function ImageCompressor() {
 
       {/* Professional Information & Knowledge Base */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 relative z-10">
-        <Suspense fallback={null}>
+        {/* Keep layout stable while lazy KB bundle downloads */}
+        <Suspense
+          fallback={<div className="w-full h-[420px]" aria-hidden="true" />}
+        >
           <KnowledgeBaseSectionsLazy />
         </Suspense>
       </section>
 
       {/* Page Footer */}
-      <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <div
+            className="w-full py-12 border-t border-slate-200 bg-white/40 mt-16 relative z-10 font-medium"
+            aria-hidden="true"
+          />
+        }
+      >
         <Footer />
       </Suspense>
     </div>
   );
 }
+
+
 
 
