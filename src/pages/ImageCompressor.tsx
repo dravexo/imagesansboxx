@@ -11,12 +11,15 @@ import SettingsPanel from '../components/SettingsPanel';
 import Dropzone from '../components/Dropzone';
 import FileList, { formatBytes } from '../components/FileList';
 import BatchActions from '../components/BatchActions';
-import Footer from '../components/Footer';
+
 // Import Types
 import { ConverterFile, GlobalSettings, ImageFormat } from '../types';
 
+const Footer = lazy(() => import('../components/Footer'));
+const KnowledgeBaseSectionsLazy = lazy(() =>
+  import('./home/KnowledgeBaseSections').then((m) => ({ default: m.KnowledgeBaseSections }))
+);
 
-import { KnowledgeBaseSections } from './home/KnowledgeBaseSections';
 
 const HowItWorksModalContent = lazy(() =>
   import("./home/KnowledgeBaseSections").then(module => ({
@@ -24,6 +27,7 @@ const HowItWorksModalContent = lazy(() =>
   }))
 );
 import { useImageConversion } from '../hooks/useImageConversion';
+
 
 
 export default function ImageCompressor() {
@@ -152,14 +156,30 @@ export default function ImageCompressor() {
     setIsConvertingAny(converting);
   }, [files]);
 
+  // Auto-scroll to the "Apply & Compress" area the first time a user uploads an image
+  useEffect(() => {
+    if (didAutoScrollRef.current) return;
+    if (files.length === 0) return;
+
+    didAutoScrollRef.current = true;
+
+    // Wait one paint so SettingsPanel is definitely mounted
+    requestAnimationFrame(() => {
+      settingsPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [files.length]);
+
   const { runConversion } = useImageConversion();
+
   const [pageError, setPageError] = useState<string | null>(null);
 
-
+  const settingsPanelRef = useRef<HTMLDivElement | null>(null);
+  const didAutoScrollRef = useRef(false);
 
   // Maintain ref to files to avoid dependency lag in callbacks
   const filesRef = useRef<ConverterFile[]>(files);
   filesRef.current = files;
+
 
   // Convert a single file from the list
   const handleConvertFile = async (id: string) => {
@@ -491,19 +511,26 @@ export default function ImageCompressor() {
         )}
 
         {/* Global Configuration Controls */}
-        <SettingsPanel
-          settings={settings}
-          onChange={handleGlobalSettingsChange}
-          hasFiles={files.length > 0}
-          onApplyToAll={handleApplyGlobalSettings}
-          onCompressAll={() => {
-            handleApplyGlobalSettings();
-            setTimeout(() => {
-              handleConvertAll();
-            }, 50);
-          }}
-          isConvertingAny={isConvertingAny}
-        />
+        {files.length > 0 && (
+          <div
+            ref={settingsPanelRef}
+          >
+            <SettingsPanel
+              settings={settings}
+              onChange={handleGlobalSettingsChange}
+              hasFiles={files.length > 0}
+              onApplyToAll={handleApplyGlobalSettings}
+              onCompressAll={() => {
+                handleApplyGlobalSettings();
+                setTimeout(() => {
+                  handleConvertAll();
+                }, 50);
+              }}
+              isConvertingAny={isConvertingAny}
+            />
+          </div>
+        )}
+
 
         {/* Queue of images and Bulk utilities */}
         {files.length > 0 && (
@@ -568,12 +595,17 @@ export default function ImageCompressor() {
 
       {/* Professional Information & Knowledge Base */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24 relative z-10">
-<KnowledgeBaseSections />
+        <Suspense fallback={null}>
+          <KnowledgeBaseSectionsLazy />
+        </Suspense>
       </section>
 
-{/* Page Footer */}
-<Footer />
+      {/* Page Footer */}
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
+
 
