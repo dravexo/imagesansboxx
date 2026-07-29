@@ -17,6 +17,7 @@ const IndianGovtSizeGuide = lazy(() => import('./pages/IndianGovtSizeGuide'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const YouTubeThumbnailDownloader = lazy(() => import('./pages/YouTubeThumbnailDownloader.tsx'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 
@@ -118,11 +119,19 @@ export default function App() {
               </Suspense>
             }
           />
-          <Route
+<Route
             path="/terms-of-service"
             element={
               <Suspense fallback={<LoadingFallback />}>
                 <TermsOfService />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/youtube-thumbnail-downloader"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <YouTubeThumbnailDownloader />
               </Suspense>
             }
           />

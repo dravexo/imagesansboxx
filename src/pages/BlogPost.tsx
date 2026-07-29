@@ -43,8 +43,41 @@ export default function BlogPost() {
     }
   };
 
+  // Build SEO metadata for the post
+  const seoTitle = `${post.title} | ImageSandboxX Blog`;
+  const seoDescription = post.excerpt;
+  const canonicalUrl = `https://imagesandboxx.online/blog/${post.slug}`;
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    datePublished: post.date,
+    image: post.imageUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'ImageSandboxX',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+    },
+  };
+
   return (
-    <PageLayout title="Blog">
+    <PageLayout
+      title="Blog"
+      seo={{
+        title: seoTitle,
+        description: seoDescription,
+        canonicalUrl,
+        jsonLd: articleJsonLd,
+      }}
+    >
       <article className="max-w-3xl w-full mx-auto pb-20">
         <div className="mb-8">
           <Link to="/blog" className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700">

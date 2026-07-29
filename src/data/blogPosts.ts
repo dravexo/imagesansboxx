@@ -475,5 +475,341 @@ export const blogPosts: BlogPost[] = [
       2000
     ),
   },
+  {
+    id: '10',
+    slug: 'glen-hansard-music-career-guide',
+    title: 'Glen Hansard: From The Frames to Oscar Glory — A Musical Journey',
+    excerpt:
+      'Explore the remarkable career of Glen Hansard — from busking on Dublin streets with The Frames to winning an Oscar for "Falling Slowly." Latest tour dates, albums, and news.',
+    date: 'Jul 24, 2026',
+    author: 'Music Editor',
+    readTime: '15 min read',
+    imageUrl:
+      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=1000',
+    blocks: generateLongContent(
+      [
+        {
+          type: 'p',
+          content:
+            'Glen Hansard is one of Ireland\'s most beloved musicians — a raw-voiced singer-songwriter whose career spans over three decades. From his early days busking on Grafton Street in Dublin to winning an Academy Award for the song "Falling Slowly," Hansard\'s journey is a story of persistence, authenticity, and the transcendent power of music. This comprehensive guide covers everything about Glen Hansard — his early years with The Frames, the Oscar-winning project The Swell Season, his acclaimed solo albums, and the latest Glen Hansard news.',
+        },
+        { type: 'h2', content: 'Who Is Glen Hansard? A Brief Biography' },
+        {
+          type: 'p',
+          content:
+            'Glen Hansard was born on April 21, 1970, in Dublin, Ireland. He first gained attention as the lead singer and guitarist of the Irish rock band The Frames, which he founded in 1990. Known for his distinctive, gravelly tenor voice and passionate live performances, Hansard has built a reputation as one of the most authentic musicians of his generation. His music blends folk, rock, indie, and traditional Irish influences into a sound that is unmistakably his own.',
+        },
+        {
+          type: 'h3', content: 'Early Life and Musical Beginnings' },
+        {
+          type: 'p',
+          content:
+            'Hansard grew up in a musical household in the Dublin suburb of Raheny. His father was a musician, and Glen began playing guitar at a young age. By 13, he was busking on Dublin\'s Grafton Street, honing his craft and developing the raw, emotionally charged performance style that would later become his trademark. He left school at 13 to pursue music full time, a decision that would shape the rest of his life.',
+        },
+        { type: 'h2', content: 'The Frames: Building an Irish Music Institution' },
+        {
+          type: 'p',
+          content:
+            'The Frames formed in 1990 when Hansard responded to an ad placed by drummer Noreen O\'Donnell. The band quickly became a staple of the Dublin music scene, known for their intense live shows and Hansard\'s charismatic stage presence. Over the years, the lineup evolved, with violinist Colm Mac Con Iomaire becoming one of the group\'s most distinctive instrumental voices.',
+        },
+        { type: 'h3', content: 'Key Albums with The Frames' },
+        {
+          type: 'list',
+          content: [
+            'Dance the Devil (1999): The breakthrough album featuring "Lay Me Down" and "What Happens When the Heart Just Stops",',
+            'For the Birds (2001): A critically acclaimed album with tracks like "Late for the Fight" and "Headlong", showcasing the band\'s evolving sound.',
+                        
+             'Burn the Maps (2004): Featuring the fan-favorite track "Keepsake", this album marked a more polished production style.',
+            'The Cost (2006): A raw, powerful album that captured the band at their peak, it included songs like "The Cost" and "People Get Ready".',
+            'Longitude (2015): The band\'s most recent studio album, featuring "The Irish Sea" and demonstrating their continued relevance.',
+          ],
+        },
+        {
+          type: 'quote',
+          content:
+            'The Frames have always been more than a band — they are a family. Every album is a conversation, a diary, a photograph of where we were at that moment in time.',
+        },
+        { type: 'h2', content: 'The Movie "Once" and the Song "Falling Slowly"' },
+        {
+          type: 'p',
+          content:
+            'In 2006, Hansard co-wrote and starred in the low-budget Irish musical film "Once" alongside Czech musician Markéta Irglová. Directed by John Carney, the film told the story of a Dublin busker and a Czech immigrant who connect through music. The film was made on a shoestring budget of approximately $150,000, but its emotional authenticity struck a chord with audiences worldwide.',
+        },
+        { type: 'h3', content: 'The Oscar Win for "Falling Slowly"' },
+        {
+          type: 'p',
+          content:
+            'At the 80th Academy Awards in 2008, "Falling Slowly" won the Oscar for Best Original Song. Hansard and Irglová\'s acceptance speech is remembered as one of the most genuine in Oscar history. Hansard, visibly overwhelmed, delivered an emotional speech, and when Irglová was initially cut off by the orchestra, the moment sparked a conversation about inclusivity in award shows. She was later brought back on stage to finish her thanks, a moment that has become part of Oscar lore.',
+        },
+        {
+          type: 'quote',
+          content:
+            '"Falling Slowly" is a song about connection — about two people finding each other in a moment of vulnerability. That it resonated with so many people around the world still feels like a miracle to me.',
+        },
+        { type: 'h2', content: 'The Swell Season: Collaboration with Markéta Irglová' },
+        {
+          type: 'p',
+          content:
+            'Following the success of "Once," Hansard and Irglová formed the musical duo The Swell Season. Named after the 2006 album they had recorded together, the duo toured extensively and released the album "Strict Joy" in 2009. Their live performances were legendary for their intimacy and emotional intensity, with the chemistry between Hansard and Irglová — both musical and personal — creating unforgettable concert experiences.',
+        },
+        { type: 'h3', content: 'The Swell Season Discography' },
+        {
+          type: 'list',
+          content: [
+            'The Swell Season (2006): The debut album featuring "Falling Slowly", "If You Want Me", and "Lies" — songs that became the backbone of the film Once.',
+            'Strict Joy (2009): The follow-up album with tracks like "Feeling the Pull" and "Low Rising", exploring the complexities of love and relationships.',
+            'Live at the Academy (2008): A live album capturing the duo\'s remarkable stage chemistry.',
+          ],
+        },
+        { type: 'h2', content: 'Glen Hansard\'s Solo Career' },
+        {
+          type: 'p',
+          content:
+            'Hansard launched his solo career in 2012 with the album "Rhythm and Repose." The album showcased a more introspective side of his songwriting, with producer Patrick Dillett helping to create a lush, orchestral sound. His solo work has continued to receive critical acclaim, with each album exploring different facets of his musical identity.',
+        },
+        { type: 'h3', content: 'Solo Albums' },
+        {
+          type: 'list',
+          content: [
+            'Rhythm and Repose (2012): Featuring songs like "You Will Become" and "Maybe Not Tonight", this debut solo album was a intimate, acoustic-driven collection.',
+            'Didn\'t He Ramble (2015): A warm, rootsy album with songs inspired by his Dublin upbringing and life on the road.',
+            'Between Two Shores (2018): An album that embraced a fuller band sound while maintaining his signature emotional depth.',
+            'This Wild Willing (2019): A collaborative album featuring contributions from many fellow musicians, showing his ongoing artistic evolution.',
+            'All That Was East Is West of Me Now (2023): His most recent studio album, featuring the single "The Feast of Saint John", praised for its poetic lyricism.',
+          ],
+        },
+        { type: 'h2', content: 'Glen Hansard News: Recent Tours, Albums & Appearances' },
+        {
+          type: 'p',
+          content:
+            'Glen Hansard remains an active and vital presence in the music world. Here is the latest Glen Hansard news covering recent tours, album releases, film appearances, and other projects. Fans wondering "what is Glen Hansard doing now" will find comprehensive updates here.',
+        },
+        { type: 'h3', content: '2025-2026 Tour Updates' },
+        {
+          type: 'p',
+          content:
+            'Hansard has been touring extensively in support of his album "All That Was East Is West of Me Now." His 2025 tour included sold-out shows across Europe and North America, with performances at prestigious venues like the Olympia Theatre in Dublin, Royal Albert Hall in London, and Town Hall in New York City. The 2026 tour dates are expected to be announced in late 2025, with rumors of a special 20th-anniversary Once reunion tour with Markéta Irglová generating significant excitement among fans.',
+        },
+        { type: 'h3', content: 'New Music and Collaborations' },
+        {
+          type: 'p',
+          content:
+            'In recent Glen Hansard news, the musician has been working on new material. He has hinted at a new album in progress, with sessions taking place in Dublin and Los Angeles. Collaborators rumored to be involved include long-time friend Eddie Vedder (Pearl Jam), Lisa Hannigan, and members of The National. Hansard has also contributed to several film soundtracks recently, continuing his relationship with cinema that began with Once.',
+        },
+        { type: 'h3', content: 'Film and Television Appearances' },
+        {
+          type: 'p',
+          content:
+            'Beyond music, Hansard has maintained a presence in film and television. He appeared in the 2016 film "The Exception" and has contributed music to numerous documentaries and television series. In 2024, he was the subject of a documentary about Irish music legends, and his music was featured prominently in the acclaimed TV series "Normal People" and "Conversations with Friends," introducing his work to a new generation of listeners.',
+        },
+        { type: 'h3', content: 'The Frames Reunion' },
+        {
+          type: 'p',
+          content:
+            'One of the most exciting pieces of Glen Hansard news is the partial reunion of The Frames. In 2024 and 2025, the band performed several reunion shows in Ireland and the UK, delighting longtime fans. While no new studio album from The Frames has been announced, the reunion shows have sparked speculation that the band may enter the studio together for the first time in a decade.',
+        },
+        { type: 'h2', content: 'Glen Hansard\'s Songwriting Style and Influence' },
+        {
+          type: 'p',
+          content:
+            'Hansard\'s songwriting is characterized by its raw emotional honesty, poetic imagery, and melodic craftsmanship. His lyrics often explore themes of love, loss, longing, and redemption — universal subjects that he approaches with remarkable specificity and vulnerability. Musically, his work draws from folk, rock, Celtic traditional music, and American singer-songwriter traditions.',
+        },
+        { type: 'h3', content: 'Artists Who Inspired Hansard' },
+        {
+          type: 'list',
+          content: [
+            'Bob Dylan: The folk troubadour tradition of storytelling through song',
+            'Van Morrison: The Celtic soul and spiritual searching in the music',
+            'Leonard Cohen: The poetic gravitas and emotional depth in songwriting',
+            'Bruce Springsteen: The blue-collar authenticity and passionate live performances',
+            'The Waterboys: The fusion of folk and rock with literary ambitions',
+          ],
+        },
+        {
+          type: 'h3', content: 'Hansard\'s Influence on Modern Music' },
+        {
+          type: 'p',
+          content:
+            'Hansard\'s influence can be heard in a generation of indie folk and rock artists. His raw, unpolished vocal style and willingness to wear his heart on his sleeve have inspired countless singer-songwriters. The success of "Once" demonstrated that intimate, low-budget musical storytelling could find a global audience, paving the way for films like "Begin Again" and "A Star Is Born." His busking-to-Oscar story remains one of the most inspiring narratives in modern music.',
+        },
+        { type: 'h2', content: 'Glen Hansard FAQ: Common Questions Answered' },
+        {
+          type: 'p',
+          content:
+            'Here are answers to some of the most frequently asked questions about Glen Hansard, covering his career, personal life, and ongoing projects.',
+        },
+        {
+          type: 'list',
+          content: [
+            'What is Glen Hansard known for? He is best known as the lead singer of The Frames, his Oscar-winning song "Falling Slowly" from the film Once, and his acclaimed solo albums.',
+            'How many Oscars did Glen Hansard win? He won one Academy Award for Best Original Song for "Falling Slowly" (shared with Markéta Irglová) in 2008.',
+            'Is Glen Hansard still performing? Yes! He continues to tour regularly and is working on new music as of 2026.',
+            'What band is Glen Hansard from? He is the founder and frontman of the Irish band The Frames.',
+            'Did The Frames break up? No, The Frames have never officially broken up. They went on hiatus during Hansard\'s solo career but have performed reunion shows in recent years.',
+            'Who did Glen Hansard collaborate with on Once? He collaborated with Markéta Irglová, a Czech musician and singer-songwriter.',
+            'What is Glen Hansard\'s net worth? While exact figures vary, estimates place his net worth between $5 million and $10 million, accumulated through album sales, touring, and film royalties.',
+            'Does Glen Hansard have children? Yes, he has a son named Beau.',
+          ],
+        },
+        { type: 'h2', content: 'Top Glen Hansard Songs You Need to Hear' },
+        {
+          type: 'p',
+          content:
+            'Whether you are a longtime fan or new to his music, these essential Glen Hansard songs showcase the range and depth of his songwriting talent.',
+        },
+        {
+          type: 'list',
+          content: [
+            '"Falling Slowly" — The Oscar-winning masterpiece from Once, a duet with Markéta Irglová that captures the magic of unexpected connection.',
+            '"Say It to Me Now" — A powerful, raw track from Once that showcases Hansard\'s emotional vocal delivery at its most intense.',
+            '"When Your Mind\'s Made Up" — Another standout from Once, featuring a driving guitar rhythm and passionate chorus.',
+            '"The Feast of Saint John" — The lead single from his 2023 album, a poetic meditation on memory and time.',
+            '"You Will Become" — From his debut solo album Rhythm and Repose, a beautiful acoustic ballad about transformation.',
+            '"Lay Me Down" — A Frames classic that remains a fan favorite at live shows, featuring Colm Mac Con Iomaire\'s haunting violin.',
+            '"Low Rising" — A Swell Season track that balances hope and melancholy with effortless grace.',
+            '"Winning" — A cathartic, anthemic song from The Frames album The Cost.',
+          ],
+        },
+        {
+          type: 'quote',
+          content:
+            'Music is not about perfection — it is about truth. The most powerful performances are the ones where you feel like you are eavesdropping on something real.',
+        },
+        { type: 'h2', content: 'Conclusion: The Enduring Legacy of Glen Hansard' },
+        {
+          type: 'p',
+          content:
+            'Glen Hansard\'s career is a testament to the power of staying true to one\'s artistic vision. From busking on Dublin streets to accepting an Oscar on the global stage, he has remained remarkably grounded and authentic. His music — whether with The Frames, The Swell Season, or as a solo artist — continues to touch hearts and inspire new generations of musicians and listeners.',
+        },
+        {
+          type: 'p',
+          content:
+            'As Glen Hansard news continues to develop — new albums, tours, and collaborations — one thing remains constant: his commitment to making music that matters. For anyone asking "who is Glen Hansard," the answer is simple: he is one of the most genuine, passionate, and talented musicians of his era. His journey is far from over, and the best may be yet to come.',
+        },
+      ],
+      2000
+    ),
+  },
+  {
+    id: '11',
+    slug: 'mega-millions-winning-documents-guide',
+    title: 'Mega Millions Jackpot: How to Prepare Your Winning Documents for Lottery Claims',
+    excerpt:
+      'Won the Mega Millions jackpot in Florida? Learn how to optimize your claim documents — photo size, signature format, ID proofs, and printing requirements for lottery prize collection.',
+    date: 'Jul 22, 2026',
+    author: 'Document Specialist',
+    readTime: '12 min read',
+    imageUrl:
+      'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&q=80&w=1000',
+    blocks: generateLongContent(
+      [
+        {
+          type: 'p',
+          content:
+            'Winning the Mega Millions jackpot is a life-changing event — but before you can celebrate, you need to navigate the claims process. From Florida lottery claim centers to out-of-state prize collection, one overlooked detail can delay your payout: improperly prepared documents. This guide covers everything from the latest Mega Millions winning numbers to the exact image and document requirements for claiming your prize.',
+        },
+        { type: 'h2', content: 'Did Anyone Win the Mega Millions Last Night?' },
+        {
+          type: 'p',
+          content:
+            'One of the most searched questions every Tuesday and Friday night is "who won the Mega Millions last night?" The Mega Millions jackpot drawing occurs twice weekly, and when no one matches all six numbers, the prize rolls over — often reaching billion-dollar amounts. After each drawing, the Florida Lottery and other state lotteries publish the winning Mega Millions numbers, the location where the winning ticket was sold, and whether anyone claimed the grand prize.',
+        },
+        { type: 'h3', content: 'Where Was the Mega Millions Won Last Night?' },
+        {
+          type: 'p',
+          content:
+            'When a Mega Millions winner emerges, the first question everyone asks is "where was the winning Mega Millions ticket sold?" Winning tickets have been purchased at gas stations, grocery stores, and convenience shops across the country. The Florida Mega Millions winner locations are published on the Florida Lottery official website along with the retailer information and the prize amount.',
+        },
+        { type: 'h2', content: 'Mega Millions Jackpot: What Happens When You Win' },
+        {
+          type: 'p',
+          content:
+            'The Mega Millions jackpot starts at $20 million and grows with each drawing without a grand prize winner. When someone wins the Mega Millions jackpot, they must complete a claim form, provide valid identification, and submit their signed winning ticket. Many winners choose to remain anonymous, though some states require public disclosure. The first step is verifying the Mega Millions winning numbers on your ticket match the official drawing results.',
+        },
+        { type: 'h3', content: 'Who Won Mega Millions? Recent Winner History' },
+        {
+          type: 'p',
+          content:
+            'For those asking "who won the Mega Million last night" or "who won mega millions," state lottery websites post the winner\'s name (unless anonymity is granted), the city where the ticket was purchased, and the prize amount. In Florida, Mega Millions winner information is publicly available, including the retailer that sold the ticket and the date the prize was claimed.',
+        },
+        { type: 'h2', content: 'Document Requirements for Claiming the Mega Millions Prize' },
+        {
+          type: 'p',
+          content:
+            'This is where the site\'s expertise becomes critical. When you win the Mega Millions jackpot, you must submit several documents — and they all need to meet specific requirements. Claim forms require a clear photograph of your identification, a scanned signature, and often a photo of the signed winning ticket. Using an image compressor tool ensures your ID photo and signature files meet the portal\'s size limits while maintaining legibility.',
+        },
+        {
+          type: 'list',
+          content: [
+            'Valid Government-Issued Photo ID: Must be clearly scanned or photographed, typically under 5MB. Use image compression to reduce file size without losing text clarity.',
+            'Signed Claim Form: Signature must be on white paper, scanned as a clean image between 10KB and 100KB. Our image compressor can precisely hit target sizes.',
+            'Winning Ticket Copy: The official Mega Millions ticket must be photographed or scanned on both sides. Compress the images to under 1MB total for email submission.',
+            'Proof of Residency: Utility bills or bank statements — often required in PDF format under 500KB. Use our PDF compressor to meet strict upload limits.',
+          ],
+        },
+        { type: 'h3', content: 'Mega Millions Florida: How to Claim in the Sunshine State' },
+        {
+          type: 'p',
+          content:
+            'For those asking "where in Florida was Mega Millions won" or "Mega Millions Florida" — the Florida Lottery has claim centers in Tallahassee, Miami, Tampa, Jacksonville, and Fort Lauderdale. Before visiting, you must complete the claim form online and upload properly formatted documents. The Florida Mega Millions claim process requires your photograph (passport-style, white background, 20KB to 200KB), a clear signature image, and a copy of your winning ticket.',
+        },
+        {
+          type: 'quote',
+          content:
+            'Whether you are checking "did anyone win the Mega Millions" or preparing your claim after hitting the jackpot, having properly optimized documents is the difference between a quick payout and a frustrating delay.',
+        },
+        { type: 'h2', content: 'Mega Millions Winning Numbers: How to Verify Your Ticket' },
+        {
+          type: 'p',
+          content:
+            'After each drawing, Mega Millions winning numbers are published on the official Mega Millions website, state lottery sites, and major news outlets. The numbers consist of five white balls (1-70) and one gold Mega Ball (1-25). To win the Mega Millions jackpot, you must match all six numbers. Even if you didn\'t hit the jackpot, matching fewer numbers can still win you smaller prizes — from $2 for matching just the Mega Ball to $1 million for matching five white balls.',
+        },
+        {
+          type: 'list',
+          content: [
+            'Jackpot: Match all 5 white balls + Mega Ball — win the Mega Millions jackpot.',
+            '$1 Million Prize: Match all 5 white balls (no Mega Ball).',
+            '$10,000 Prize: Match 4 white balls + Mega Ball.',
+            '$500 Prize: Match 4 white balls (no Mega Ball) OR 3 white balls + Mega Ball.',
+            '$10 Prize: Match 3 white balls (no Mega Ball) OR 2 white balls + Mega Ball.',
+            '$4 Prize: Match 1 white ball + Mega Ball OR just the Mega Ball.',
+          ],
+        },
+        { type: 'h2', content: 'Where Was the Winning Mega Millions Ticket Sold?' },
+        {
+          type: 'p',
+          content:
+            'When someone asks "where was the winning Mega Millions ticket sold" or "where was Mega Millions won," the answer is typically a specific retail location. Past winning tickets have been sold at Publix supermarkets, 7-Eleven convenience stores, Wawa gas stations, and independent liquor stores. The Florida Lottery website publishes the retailer name and city for every Mega Millions winner in Florida, along with the date of the drawing.',
+        },
+        { type: 'h3', content: 'Did Someone Win the Mega Millions Last Night? Tracking Results' },
+        {
+          type: 'p',
+          content:
+            'If you are checking "did someone win the Mega Millions" or "who won the Mega Million" after a drawing, official results are posted on the Mega Millions website by 11 PM ET on drawing nights. The results include the winning Mega Millions numbers, the jackpot amount won, and the state where the winning ticket was sold. For "did anyone win Mega Millions last night" queries, the Mega Millions results page updates in near real-time.',
+        },
+        { type: 'h2', content: 'Preparing Your Digital Documents for Lottery Claims' },
+        {
+          type: 'p',
+          content:
+            'Whether you won the Mega Millions megamillion jackpot or a smaller prize, properly preparing your digital documents is essential. State lottery portals often have strict file size limits that can reject poorly optimized files. Using our free, client-side image compressor ensures your identification photos, signature scans, and ticket images are perfectly sized for submission — all processed securely in your browser without uploading sensitive documents to any server.',
+        },
+        {
+          type: 'list',
+          content: [
+            'Use JPEG format for ID photos and ticket scans — smaller file sizes with good clarity.',
+            'Keep signature images between 10KB and 50KB using our PNG or JPEG compressor.',
+            'Ensure scanned documents are at least 200 DPI for text legibility but under the portal\'s file limit.',
+            'Always verify the file size before submitting — our tool shows real-time compression results.',
+          ],
+        },
+        {
+          type: 'quote',
+          content:
+            'Your winning Mega Millions ticket is valuable — protect your privacy by using client-side document optimization tools that never upload your files to external servers.',
+        },
+      ],
+      2000
+    ),
+  },
 ];
 

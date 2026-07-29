@@ -2,13 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ShieldCheck } from 'lucide-react';
 import Footer from './Footer';
+import usePageSEO from '../hooks/usePageSEO';
 
 interface PageLayoutProps {
   title: string;
   children: React.ReactNode;
+  /** SEO metadata — if provided, will set document head and inject structured data */
+  seo?: {
+    title: string;
+    description: string;
+    canonicalUrl?: string;
+    jsonLd?: Record<string, unknown>;
+    faqJsonLd?: Array<{ question: string; answer: string }>;
+  };
 }
 
-export default function PageLayout({ title, children }: PageLayoutProps) {
+export default function PageLayout({ title, children, seo }: PageLayoutProps) {
+  // Apply SEO metadata when seo prop is provided
+  usePageSEO(
+    seo ?? {
+      title: `${title} | ImageSandboxX`,
+      description: `Use ImageSandboxX to ${title.toLowerCase()} — free, fast, and private. No uploads needed, all processing happens in your browser.`,
+      canonicalUrl: `https://imagesandboxx.online${window.location.pathname}`,
+    }
+  );
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800">
       {/* Header */}

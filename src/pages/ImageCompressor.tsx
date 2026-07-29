@@ -490,20 +490,22 @@ export default function ImageCompressor() {
           </div>
         )}
 
-        {/* Global Configuration Controls */}
-        <SettingsPanel
-          settings={settings}
-          onChange={handleGlobalSettingsChange}
-          hasFiles={files.length > 0}
-          onApplyToAll={handleApplyGlobalSettings}
-          onCompressAll={() => {
-            handleApplyGlobalSettings();
-            setTimeout(() => {
-              handleConvertAll();
-            }, 50);
-          }}
-          isConvertingAny={isConvertingAny}
-        />
+        {/* Global Configuration Controls — visible only after images are uploaded */}
+        {files.length > 0 && (
+          <SettingsPanel
+            settings={settings}
+            onChange={handleGlobalSettingsChange}
+            hasFiles={files.length > 0}
+            onApplyToAll={handleApplyGlobalSettings}
+            onCompressAll={() => {
+              handleApplyGlobalSettings();
+              setTimeout(() => {
+                handleConvertAll();
+              }, 50);
+            }}
+            isConvertingAny={isConvertingAny}
+          />
+        )}
 
         {/* Queue of images and Bulk utilities */}
         {files.length > 0 && (

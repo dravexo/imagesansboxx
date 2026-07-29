@@ -300,8 +300,61 @@ export default function PdfCompressor() {
   const totalCompressedBytes = finishedFiles.reduce((acc, f) => acc + (f.compressedSize || 0), 0);
   const totalSavingsBytes = totalOriginalBytes - totalCompressedBytes;
 
+  const seoProps = {
+    title: 'PDF Compressor — Reduce PDF File Size Online Free | ImageSandboxX',
+    description: 'Compress PDF files online for free. Reduce PDF size, convert images to PDF, and batch optimize documents. 100% free, private, and works instantly in your browser.',
+    canonicalUrl: 'https://imagesandboxx.online/pdf-compressor',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'PDF Compressor',
+      alternateName: ['PDF Size Reducer', 'Free PDF Compressor', 'Online PDF Optimizer', 'Image to PDF Converter'],
+      url: 'https://imagesandboxx.online/pdf-compressor',
+      image: 'https://imagesandboxx.online/logo.svg',
+      description: 'Compress PDF files online for free. Reduce PDF file size, convert images (JPG, PNG, WebP) to PDF format. Batch process multiple files and download as ZIP. All processing is 100% client-side and private.',
+      applicationCategory: 'UtilityApplication',
+      operatingSystem: 'All',
+      browserRequirements: 'Requires HTML5, modern browser.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      featureList: [
+        'Compress PDF files to smaller sizes',
+        'Convert images (JPG, PNG, WebP) to PDF',
+        'Batch process multiple files',
+        'Download all as ZIP archive',
+        '100% free and private — no server uploads',
+        'Works offline after page load',
+      ],
+    },
+    faqJsonLd: [
+      {
+        question: 'How do I compress a PDF file?',
+        answer: 'Drag and drop your PDF file onto the upload area, then click the "Compress" button next to the file or "Compress All" to process all files. The tool will optimize the PDF structure and reduce its file size. You can then download the compressed version.',
+      },
+      {
+        question: 'Can I convert images to PDF?',
+        answer: 'Yes. Simply drag and drop JPG, PNG, or WebP images onto the upload area. The tool will convert each image into a single-page PDF document. This is useful for creating PDFs from scanned documents, photos, or screenshots.',
+      },
+      {
+        question: 'Is my data safe when compressing PDFs?',
+        answer: 'Absolutely. All processing happens entirely in your browser using client-side JavaScript. Your files are never uploaded to any server, ensuring 100% privacy and security for your sensitive documents.',
+      },
+      {
+        question: 'Why is my compressed PDF the same size as the original?',
+        answer: 'PDFs are complex files that may contain vector graphics, embedded fonts, and other elements that are already optimized. The app keeps whichever version is smaller — the original or the processed output — so you always get the best result without quality regressions.',
+      },
+      {
+        question: 'Can I compress multiple PDFs at once?',
+        answer: 'Yes, you can upload multiple files and batch process them. Use "Compress All" to optimize all files simultaneously. Once done, you can download individual files or use the "Download ZIP" button to get all compressed PDFs in a single archive.',
+      },
+    ],
+  };
+
   return (
-    <PageLayout title="PDF Compressor">
+    <PageLayout title="PDF Compressor" seo={seoProps}>
       <div className="w-full max-w-6xl space-y-8 relative z-10">
         
         {/* Dropzone */}

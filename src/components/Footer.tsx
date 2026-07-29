@@ -12,7 +12,8 @@ export default function Footer() {
           <ul className="space-y-2 text-slate-500">
             <li><Link to="/" className="hover:text-blue-600 transition-colors">Image Compressor</Link></li>
             <li><Link to="/pdf-compressor" className="hover:text-blue-600 transition-colors">PDF Compressor</Link></li>
-            <li><Link to="/how-to-use" className="hover:text-blue-600 transition-colors">How to Use</Link></li>
+<li><Link to="/how-to-use" className="hover:text-blue-600 transition-colors">How to Use</Link></li>
+            <li><Link to="/youtube-thumbnail-downloader" className="hover:text-blue-600 transition-colors">YouTube Thumbnail Downloader</Link></li>
           </ul>
         </div>
         
