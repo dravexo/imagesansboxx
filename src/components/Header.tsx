@@ -30,7 +30,6 @@ export default function Header({ onShowHelp }: HeaderProps) {
             <h1 className="font-display font-bold text-lg tracking-tight text-slate-900">
               image<span className="text-blue-600">sandboxx</span>
             </h1>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-500 border border-slate-200">v1.0</span>
           </div>
           <p className="text-xs text-slate-500 font-medium">Professional Offline Image Converter</p>
         </div>
@@ -56,4 +55,3 @@ export default function Header({ onShowHelp }: HeaderProps) {
     </header>
   );
 }
-

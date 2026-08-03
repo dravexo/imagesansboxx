@@ -6,6 +6,8 @@ import { FileDown, Trash2, CheckCircle, AlertCircle, RefreshCw, Archive, Setting
 import JSZip from 'jszip';
 import { PdfFile, PdfSettings } from '../types';
 import { formatBytes } from '../components/FileList';
+import PdfGuidesContent from './home/GuidesPdfCompressor';
+import AdBanner from '../components/AdBanner';
 
 export default function PdfCompressor() {
   const [files, setFiles] = useState<PdfFile[]>([]);
@@ -19,6 +21,15 @@ export default function PdfCompressor() {
 
   const filesRef = useRef<PdfFile[]>(files);
   filesRef.current = files;
+
+  // Ref to the queue/results section for auto-scroll on upload
+  const queueRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToQueue = () => {
+    setTimeout(() => {
+      queueRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  };
 
   // Toggles selection for a file item
   const handleToggleSelect = (id: string) => {
@@ -115,8 +126,9 @@ export default function PdfCompressor() {
       });
     }
 
-    if (newFiles.length > 0) {
+if (newFiles.length > 0) {
       setFiles((prev) => [...prev, ...newFiles]);
+      scrollToQueue();
     }
   };
 
@@ -390,9 +402,9 @@ export default function PdfCompressor() {
           </div>
         )}
 
-        {/* Queue and Actions */}
+{/* Queue and Actions */}
         {files.length > 0 && (
-          <div className="space-y-4">
+          <div ref={queueRef} className="space-y-4 scroll-mt-24">
              {/* Batch Actions */}
              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
@@ -558,9 +570,15 @@ export default function PdfCompressor() {
                 </div>
               );
             })}
-            </div>
+</div>
           </div>
         )}
+
+        {/* Ad Banner */}
+        <AdBanner />
+
+        {/* PDF Compressor Guides & Knowledge Base */}
+        <PdfGuidesContent />
       </div>
     </PageLayout>
   );

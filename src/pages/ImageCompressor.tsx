@@ -12,6 +12,7 @@ import Dropzone from '../components/Dropzone';
 import FileList, { formatBytes } from '../components/FileList';
 import BatchActions from '../components/BatchActions';
 import Footer from '../components/Footer';
+import AdBanner from '../components/AdBanner';
 // Import Types
 import { ConverterFile, GlobalSettings, ImageFormat } from '../types';
 
@@ -155,11 +156,19 @@ export default function ImageCompressor() {
   const { runConversion } = useImageConversion();
   const [pageError, setPageError] = useState<string | null>(null);
 
-
-
   // Maintain ref to files to avoid dependency lag in callbacks
   const filesRef = useRef<ConverterFile[]>(files);
   filesRef.current = files;
+
+  // Ref to the queue/results section for auto-scroll on upload
+  const queueRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToQueue = () => {
+    // Wait for the queue to render after state update
+    setTimeout(() => {
+      queueRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  };
 
   // Convert a single file from the list
   const handleConvertFile = async (id: string) => {
@@ -265,6 +274,9 @@ export default function ImageCompressor() {
 
       return updated;
     });
+
+    // Auto-scroll to the queue once files are uploaded
+    scrollToQueue();
   };
 
   // Trigger conversion for all pending or failed items
@@ -454,8 +466,11 @@ export default function ImageCompressor() {
         {/* Intro Privacy banner */}
         <PrivacyBanner />
 
-        {/* Drag-and-drop Image Uploader */}
+{/* Drag-and-drop Image Uploader */}
         <Dropzone onFilesAdded={handleFilesAdded} />
+
+        {/* Ad Banner */}
+        <AdBanner />
 
         {/* Dynamic Aggregated Savings dashboard */}
         {finishedFiles.length > 0 && (
@@ -507,9 +522,9 @@ export default function ImageCompressor() {
           />
         )}
 
-        {/* Queue of images and Bulk utilities */}
+{/* Queue of images and Bulk utilities */}
         {files.length > 0 && (
-          <div className="space-y-4 pt-2">
+          <div ref={queueRef} className="space-y-4 pt-2 scroll-mt-24">
             <BatchActions
               files={files}
               onConvertAll={handleConvertAll}

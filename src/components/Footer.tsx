@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
+import AdBanner from './AdBanner';
 
 export default function Footer() {
   return (
     <footer className="w-full py-12 border-t border-slate-200 bg-white/40 mt-16 relative z-10 font-medium">
+      <div className="max-w-4xl mx-auto px-6 mb-10">
+        <AdBanner />
+      </div>
       <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8 text-sm">
         {/* Tools */}
         <div className="space-y-4">

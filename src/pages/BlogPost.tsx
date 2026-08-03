@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import { blogPosts, ContentBlock } from '../data/blogPosts';
-import { Clock, Calendar, User, ArrowLeft } from 'lucide-react';
+import { Clock, Calendar, User, ArrowLeft, Home } from 'lucide-react';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -79,10 +79,14 @@ export default function BlogPost() {
       }}
     >
       <article className="max-w-3xl w-full mx-auto pb-20">
-        <div className="mb-8">
+<div className="mb-8 flex flex-wrap items-center gap-3">
           <Link to="/blog" className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700">
             <ArrowLeft className="w-4 h-4 mr-1.5" />
             Back to all articles
+          </Link>
+          <Link to="/" className="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg border border-slate-200 transition-colors">
+            <Home className="w-4 h-4 mr-1.5" />
+            Go to Home
           </Link>
         </div>
 
@@ -126,7 +130,18 @@ export default function BlogPost() {
             {post.excerpt}
           </div>
           
-          {post.blocks.map((block, index) => renderBlock(block, index))}
+{post.blocks.map((block, index) => renderBlock(block, index))}
+        </div>
+
+        <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link to="/" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-xl shadow-md shadow-blue-500/20 transition-all">
+            <Home className="w-4 h-4" />
+            Go to Home
+          </Link>
+          <Link to="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-bold rounded-xl border border-slate-200 transition-all">
+            <ArrowLeft className="w-4 h-4" />
+            Back to all articles
+          </Link>
         </div>
       </article>
     </PageLayout>
