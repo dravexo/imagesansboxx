@@ -1,8 +1,9 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
+import ShareButton from '../components/ShareButton';
 import { blogPosts, ContentBlock } from '../data/blogPosts';
-import { Clock, Calendar, User, ArrowLeft, Home } from 'lucide-react';
+import { Clock, Calendar, User, ArrowLeft, Home, Gift } from 'lucide-react';
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -131,6 +132,24 @@ export default function BlogPost() {
           </div>
           
 {post.blocks.map((block, index) => renderBlock(block, index))}
+        </div>
+
+        <div className="mt-10 rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 p-5 text-center shadow-sm">
+          <div className="flex items-center justify-center gap-2 text-sm font-black uppercase tracking-[0.18em] text-amber-700 mb-3">
+            <Gift className="w-4 h-4" />
+            Share & get value
+          </div>
+          <p className="text-slate-600 mb-4">
+            Share this article with friends and help more people discover smarter image optimization tips.
+          </p>
+          <ShareButton
+            title={post.title}
+            text={`Read this article: ${post.title}`}
+            url={`${window.location.origin}/blog/${post.slug}`}
+            label="Share this article"
+            showIncentive
+            className="mx-auto"
+          />
         </div>
 
         <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">

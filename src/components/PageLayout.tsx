@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ShieldCheck } from 'lucide-react';
 import Footer from './Footer';
+import ShareButton from './ShareButton';
 import usePageSEO from '../hooks/usePageSEO';
 
 interface PageLayoutProps {
@@ -47,6 +48,16 @@ export default function PageLayout({ title, children, seo }: PageLayoutProps) {
         </div>
 
         <div className="flex items-center gap-4">
+          <ShareButton
+            title={title === 'Blog' ? 'ImageSandboxX Blog' : `${title} | ImageSandboxX`}
+            text="Check this out on ImageSandboxX and explore the free tools."
+            url={typeof window !== 'undefined' ? window.location.href : undefined}
+            label="Share & Win"
+            variant="secondary"
+            showIncentive
+            className="hidden sm:inline-flex"
+          />
+
           {/* Local-only badge */}
           <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-semibold">
             <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
