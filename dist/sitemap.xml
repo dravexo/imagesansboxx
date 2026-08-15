@@ -19,6 +19,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://imagesandboxx.online/contact-us</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://imagesandboxx.online/blog</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>daily</changefreq>
@@ -49,13 +55,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://imagesandboxx.online/about-us</loc>
-    <lastmod>2026-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://imagesandboxx.online/mega-millions</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://imagesandboxx.online/contact-us</loc>
+    <loc>https://imagesandboxx.online/about-us</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -66,13 +72,13 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-<url>
+  <url>
     <loc>https://imagesandboxx.online/terms-of-service</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-<url>
+  <url>
     <loc>https://imagesandboxx.online/youtube-thumbnail-downloader</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>

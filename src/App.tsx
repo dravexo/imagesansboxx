@@ -14,6 +14,7 @@ const BlogPost = lazy(() => import('./pages/BlogPost'));
 const GovernmentFormGuide = lazy(() => import('./pages/GovernmentFormGuide'));
 const JobApplicationGuide = lazy(() => import('./pages/JobApplicationGuide'));
 const IndianGovtSizeGuide = lazy(() => import('./pages/IndianGovtSizeGuide'));
+const MegaMillions = lazy(() => import('./pages/MegaMillions'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
@@ -100,6 +101,14 @@ export default function App() {
             element={
               <Suspense fallback={<LoadingFallback />}>
                 <IndianGovtSizeGuide />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/mega-millions"
+            element={
+              <Suspense fallback={<LoadingFallback />}>
+                <MegaMillions />
               </Suspense>
             }
           />
