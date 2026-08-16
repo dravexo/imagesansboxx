@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, HelpCircle } from 'lucide-react';
+import { ShieldCheck, HelpCircle, ExternalLink } from 'lucide-react';
 
 interface HeaderProps {
   onShowHelp: () => void;
@@ -35,12 +35,23 @@ export default function Header({ onShowHelp }: HeaderProps) {
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         {/* Local-only badge */}
         <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-700 border border-green-200 text-xs font-semibold">
           <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
           <span>100% Client-Side (Private)</span>
         </div>
+
+        <a
+          href="https://dravexo.github.io/light/"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-semibold shadow-sm hover:shadow-md transition-all"
+          aria-label="Open PUBG Lite"
+        >
+          <span>PUBG Lite</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
 
         {/* Help/Info trigger */}
         <button
