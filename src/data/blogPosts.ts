@@ -1273,7 +1273,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Aug 18, 2022',
     author: 'Gaming Expert',
     readTime: '15 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1538481527238-8520d059803f?auto=format&fit=crop&q=80&w=1000',
+    imageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLF7l6pefPo8fy44OlOmhUx9RtOmoIpqxD32SdtXtTIja8O64XU0l3lqXa9prtL6ZCrNeMIcUIdDWqr-AmBkQF7rW3ePscRt6AI_9OThIPOHnUmiRi7bMabIUjL-yR8CsLGRf8Jh8MjOZDdR2yScfizMCiAlk8yPtDCAWHw_R1S8jF4IIEL8H2_wqoUpA/s1672/hello1.png',
     blocks: [
       {
         type: 'p',
@@ -1387,7 +1387,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Aug 18, 2022',
     author: 'Gaming Expert',
     readTime: '15 min read',
-    imageUrl: 'https://images.unsplash.com/photo-1538481527238-8520d059803f?auto=format&fit=crop&q=80&w=1000',
+    imageUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLF7l6pefPo8fy44OlOmhUx9RtOmoIpqxD32SdtXtTIja8O64XU0l3lqXa9prtL6ZCrNeMIcUIdDWqr-AmBkQF7rW3ePscRt6AI_9OThIPOHnUmiRi7bMabIUjL-yR8CsLGRf8Jh8MjOZDdR2yScfizMCiAlk8yPtDCAWHw_R1S8jF4IIEL8H2_wqoUpA/s1672/hello1.png',
     blocks: [
       {
         type: 'p',
