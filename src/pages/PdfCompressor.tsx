@@ -7,7 +7,6 @@ import JSZip from 'jszip';
 import { PdfFile, PdfSettings } from '../types';
 import { formatBytes } from '../components/FileList';
 import PdfGuidesContent from './home/GuidesPdfCompressor';
-import AdBanner from '../components/AdBanner';
 
 export default function PdfCompressor() {
   const [files, setFiles] = useState<PdfFile[]>([]);
@@ -573,9 +572,6 @@ if (newFiles.length > 0) {
 </div>
           </div>
         )}
-
-        {/* Ad Banner */}
-        <AdBanner />
 
         {/* PDF Compressor Guides & Knowledge Base */}
         <PdfGuidesContent />

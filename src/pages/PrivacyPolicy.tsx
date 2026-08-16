@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
               We use primary functional cookies and local storage tokens to remember your chosen conversion settings (such as target format and resolution scales) for a personalized session.
             </p>
             <p>
-              Third-party partners, including Google AdSense or analytics networks, may use cookies to serve relevant advertisements based on your prior visits to our website or other sites on the Internet. You can choose to opt out of personalized advertising by visiting your Google Ad Settings or managing cookies in your browser settings.
+              We do not use third-party advertising networks or personalized ad targeting on this website. We only use essential cookies and local browser storage to preserve your selected tool settings for the current session.
             </p>
           </section>
 

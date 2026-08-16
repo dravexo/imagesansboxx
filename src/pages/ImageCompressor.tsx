@@ -12,7 +12,6 @@ import Dropzone from '../components/Dropzone';
 import FileList, { formatBytes } from '../components/FileList';
 import BatchActions from '../components/BatchActions';
 import Footer from '../components/Footer';
-import AdBanner from '../components/AdBanner';
 // Import Types
 import { ConverterFile, GlobalSettings, ImageFormat } from '../types';
 
@@ -468,9 +467,6 @@ export default function ImageCompressor() {
 
 {/* Drag-and-drop Image Uploader */}
         <Dropzone onFilesAdded={handleFilesAdded} />
-
-        {/* Ad Banner */}
-        <AdBanner />
 
         {/* Dynamic Aggregated Savings dashboard */}
         {finishedFiles.length > 0 && (

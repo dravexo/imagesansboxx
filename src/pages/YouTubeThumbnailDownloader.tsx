@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
-import { Youtube, Download, Image as ImageIcon, AlertCircle, CheckCircle, ExternalLink, Copy, RefreshCw } from 'lucide-react';
-import { ByteLengthQueuingStrategy } from 'stream/web';
+import { Youtube, Download, Image as ImageIcon, AlertCircle, CheckCircle, ExternalLink, Copy, RefreshCw, PencilLine } from 'lucide-react';
 
 interface ThumbnailOption {
   label: string;
@@ -325,7 +325,7 @@ export default function YouTubeThumbnailDownloader() {
               <button onClick={handleCopyVideoId} className="p-1.5 rounded-lg hover:bg-slate-200 text-slate-400 hover:text-slate-600 transition-colors" title="Copy Video ID">
                 {copiedId ? <CheckCircle className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
               </button>
-              <a href={'https://www.youtube.com/watch?v=' + videoId} target="_blank" rel="noopener noreferrer"
+              <a href={videoId ? 'https://www.youtube.com/watch?v=' + videoId : '#'} target="_blank" rel="noopener noreferrer"
                 className="ml-auto flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors">
                 <ExternalLink className="w-3.5 h-3.5" /> Open Video
               </a>
@@ -370,10 +370,21 @@ export default function YouTubeThumbnailDownloader() {
                             )}
                           </div>
                         </div>
-                        <button onClick={function() { handleDownload(thumbnail); }} disabled={!isAvailable}
-                          className={'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all ' + (isAvailable ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-400 cursor-not-allowed')}>
-                          <Download className="w-4 h-4" /> {isAvailable ? 'Download Thumbnail' : 'Unavailable'}
-                        </button>
+                        <div className="flex flex-col gap-2 sm:flex-row">
+                          <button onClick={function() { handleDownload(thumbnail); }} disabled={!isAvailable}
+                            className={'flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all ' + (isAvailable ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/20' : 'bg-slate-100 text-slate-400 cursor-not-allowed')}>
+                            <Download className="w-4 h-4" /> {isAvailable ? 'Download' : 'Unavailable'}
+                          </button>
+                          {isAvailable && (
+                            <Link
+                              to={thumbnail.url ? '/youtube-thumbnail-editor?src=' + encodeURIComponent(thumbnail.url) : '#'}
+                              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-violet-600 hover:bg-violet-700 text-white shadow-md shadow-violet-500/20 transition-all"
+                            >
+                              <PencilLine className="w-4 h-4" />
+                              Edit
+                            </Link>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
