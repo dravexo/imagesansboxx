@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import ShareButton from '../components/ShareButton';
+import BlogAdScript from '../components/BlogAdScript';
 import { blogPosts } from '../data/blogPosts';
 import { Clock, Calendar, ArrowRight, Gift } from 'lucide-react';
 
 export default function Blog() {
   return (
     <PageLayout title="Blog">
+      <BlogAdScript />
       <div className="max-w-4xl w-full mx-auto space-y-12">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight">

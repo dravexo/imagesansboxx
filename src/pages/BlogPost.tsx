@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import ShareButton from '../components/ShareButton';
+import BlogAdScript from '../components/BlogAdScript';
 import { blogPosts, ContentBlock } from '../data/blogPosts';
 import { Clock, Calendar, User, ArrowLeft, Home, Gift } from 'lucide-react';
 
@@ -79,6 +80,7 @@ export default function BlogPost() {
         jsonLd: articleJsonLd,
       }}
     >
+      <BlogAdScript />
       <article className="max-w-3xl w-full mx-auto pb-20">
 <div className="mb-8 flex flex-wrap items-center gap-3">
           <Link to="/blog" className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700">
