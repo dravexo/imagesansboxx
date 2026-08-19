@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import { Youtube, Download, Image as ImageIcon, AlertCircle, CheckCircle, ExternalLink, Copy, RefreshCw, PencilLine } from 'lucide-react';
+import { openDownloadAd } from '../utils/download';
 
 interface ThumbnailOption {
   label: string;
@@ -188,6 +189,7 @@ export default function YouTubeThumbnailDownloader() {
 
   var handleDownload = useCallback(async function(thumbnail: ThumbnailOption) {
     if (!videoId) return;
+    openDownloadAd();
     try {
       var response = await fetch(thumbnail.url);
       var blob = await response.blob();

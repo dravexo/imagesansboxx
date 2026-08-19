@@ -24,6 +24,7 @@ const HowItWorksModalContent = lazy(() =>
   }))
 );
 import { useImageConversion } from '../hooks/useImageConversion';
+import { openDownloadAd } from '../utils/download';
 
 
 export default function ImageCompressor() {
@@ -340,6 +341,8 @@ export default function ImageCompressor() {
   const handleDownloadFile = (fileItem: ConverterFile) => {
     if (fileItem.status !== 'done' || !fileItem.convertedUrl) return;
 
+    openDownloadAd();
+
     const ext = fileItem.targetFormat === 'jpeg' ? 'jpg' : fileItem.targetFormat;
     const prefix = settings.renamePrefix ? settings.renamePrefix : '';
     const suffix = settings.renameSuffix ? settings.renameSuffix : '';
@@ -357,6 +360,8 @@ export default function ImageCompressor() {
   const handleDownloadZip = async () => {
     const doneItems = files.filter((f) => f.status === 'done' && f.convertedBlob);
     if (doneItems.length === 0) return;
+
+    openDownloadAd();
 
     const JSZip = (await import('jszip')).default;
     const zip = new JSZip();

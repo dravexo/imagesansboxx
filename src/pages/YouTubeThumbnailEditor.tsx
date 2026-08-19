@@ -11,6 +11,7 @@ import {
   Type,
   Upload,
 } from 'lucide-react';
+import { openDownloadAd } from '../utils/download';
 
 const CANVAS_WIDTH = 1280;
 const CANVAS_HEIGHT = 720;
@@ -317,6 +318,8 @@ export default function YouTubeThumbnailEditor() {
     if (!canvas || !thumbnailSrc) {
       return;
     }
+
+    openDownloadAd();
 
     const exportCanvas = document.createElement('canvas');
     exportCanvas.width = CANVAS_WIDTH;

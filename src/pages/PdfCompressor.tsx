@@ -7,6 +7,7 @@ import JSZip from 'jszip';
 import { PdfFile, PdfSettings } from '../types';
 import { formatBytes } from '../components/FileList';
 import PdfGuidesContent from './home/GuidesPdfCompressor';
+import { openDownloadAd } from '../utils/download';
 
 export default function PdfCompressor() {
   const [files, setFiles] = useState<PdfFile[]>([]);
@@ -263,6 +264,8 @@ if (newFiles.length > 0) {
   const handleDownloadFile = (fileItem: PdfFile) => {
     if (fileItem.status !== 'done' || !fileItem.compressedUrl) return;
 
+    openDownloadAd();
+
     const prefix = settings.renamePrefix || '';
     const suffix = settings.renameSuffix || '';
     const downloadName = `${prefix}${fileItem.name}${suffix}.pdf`;
@@ -278,6 +281,8 @@ if (newFiles.length > 0) {
   const handleDownloadZip = async () => {
     const doneItems = files.filter((f) => f.status === 'done' && f.compressedBlob);
     if (doneItems.length === 0) return;
+
+    openDownloadAd();
 
     const zip = new JSZip();
 
